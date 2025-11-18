@@ -154,73 +154,20 @@
   z-index: 100; /* 🔽 웹캠보다 낮음 */
   pointer-events: none;
 }
-@media (max-width: 768px) {
-  .container { width: 90vw; }
-
-  /* 메인/방법 버튼은 이미 있고 */
-
-  /* 🔹 게임 화면 요소들 폰용 위치/크기 다시 잡기 */
-  #game-page .container {
-    width: 100vw;
-    max-width: 100vw;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  #portrait {
-    top: 14%;
-    width: 60%;
-  }
-
-  #user-input {
-    bottom: 18%;
-    left: 10%;
-    width: 70%;
-    height: 48px;
-    font-size: 16px;
-  }
-
-  #send-button {
-    bottom: 17%;
-    right: 10%;
-    width: 16%;
-  }
-
-  #like-button {
-    bottom: 8%;
-    right: 10%;
-    width: 20%;
-  }
-
-  #percent-text {
-    top: 36%;
-    right: 8%;
-    font-size: 1.4rem;
-  }
-
-  #text-log {
-    top: 50%;
-    right: 5%;
-    width: 32%;
-    height: 90px;
-    font-size: 12px;
+   @media (max-width: 900px) and (orientation: landscape) {
+  .game-wrapper {
+    transform: translate(-50%, -50%) scale(0.6);
   }
 }
-/* 화면 양옆에 검정 바 넣기 */
-body, html {
-  background: black;
-  overflow: hidden;
-}
 
-/* 게임 전체를 고정된 캔버스처럼 만들기 */
 .game-wrapper {
   position: absolute;
+  width: 1280px;
+  height: 720px;
   top: 50%;
   left: 50%;
-  width: 1280px;   /* 너가 PC 기준으로 작업한 너비 */
-  height: 720px;   /* 너가 PC 기준으로 작업한 높이 */
-  transform: translate(-50%, -50%);
-  background: black;
+  transform: translate(-50%, -50%); /* 가운데 위치 */
+  transform-origin: top left;
 }
 
   </style>
@@ -525,6 +472,7 @@ document.head.appendChild(fireStyle);
 </body>
 
 </html>
+
 
 
 
